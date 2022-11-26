@@ -59,7 +59,8 @@ namespace _5_lab_3_sem
         public ISet<string> FindSentencesFirstWords()
         {
             ISet<string> words = new HashSet<string>();
-            foreach (Match m in Regex.Matches(this.Text, @"([A-Z]\w+).*\?"))
+            foreach (Match m in Regex.Matches(this.Text, 
+                @"( ?[A-Z]\w+,?)\s(\b\w+ |\(\w+ |\w+\, |\w+\) |\w+\'\w+ |\w+\-\w+ )*\w+\?"))
             {
                 words.Add(m.Groups[1].Value);
             }
@@ -84,6 +85,8 @@ namespace _5_lab_3_sem
             }
             return counts;
         }
+
+
 
     }
 }

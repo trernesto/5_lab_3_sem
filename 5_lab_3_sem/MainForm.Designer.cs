@@ -41,6 +41,7 @@
             this.orOfClickToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.findFirstWordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.статистикаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.первыеБуквыСловToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -151,10 +152,18 @@
             // 
             // статистикаToolStripMenuItem
             // 
+            this.статистикаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.первыеБуквыСловToolStripMenuItem});
             this.статистикаToolStripMenuItem.Name = "статистикаToolStripMenuItem";
             this.статистикаToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
             this.статистикаToolStripMenuItem.Text = "Статистика";
-            this.статистикаToolStripMenuItem.Click += new System.EventHandler(this.статистикаToolStripMenuItem_Click);
+            // 
+            // первыеБуквыСловToolStripMenuItem
+            // 
+            this.первыеБуквыСловToolStripMenuItem.Name = "первыеБуквыСловToolStripMenuItem";
+            this.первыеБуквыСловToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.первыеБуквыСловToolStripMenuItem.Text = "Первые буквы слов";
+            this.первыеБуквыСловToolStripMenuItem.Click += new System.EventHandler(this.первыеБуквыСловToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -194,5 +203,6 @@
         private System.Windows.Forms.ToolStripMenuItem orOfClickToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem findFirstWordToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem статистикаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem первыеБуквыСловToolStripMenuItem;
     }
 }

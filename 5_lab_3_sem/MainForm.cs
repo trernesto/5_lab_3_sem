@@ -50,7 +50,7 @@ namespace _5_lab_3_sem
 
         private void ShowMatch()
         {
-            Match m = data.Match; // получить m из data, добавить using
+            Match m = data.Match; // получить m из data
             if (m != null && m.Success)
             {
                 richTextBox1.SelectionBackColor = Color.White; // сброс подсветки
@@ -106,7 +106,7 @@ namespace _5_lab_3_sem
             richTextBox2.Text = String.Join(", ", words);
         }
 
-        private void статистикаToolStripMenuItem_Click(object sender, EventArgs e)
+        private void первыеБуквыСловToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new StatisticsForm(data.FirstLetterCounts()).Show();
         }
