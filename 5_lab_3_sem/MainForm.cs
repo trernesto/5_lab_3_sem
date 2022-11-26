@@ -20,7 +20,16 @@ namespace _5_lab_3_sem
             InitializeComponent();
             data.ReadFromFile(Settings.Default.DefaultFileName);
             richTextBox1.Text = data.Text;
+
+            listBox1.Items.Add(@"\s+\w+\s+");
+            listBox1.Click += (s, e) =>
+            {
+                textBox1.Text = listBox1.Text;
+                data.Find(textBox1.Text);
+                ShowMatch();
+            };
         }
+
 
         private void OpenFile(object sender, EventArgs e)
         {
@@ -54,7 +63,10 @@ namespace _5_lab_3_sem
                 richTextBox1.SelectionBackColor = Color.Yellow; // подсветка
 
                 richTextBox2.Text = $"Найдено[{m.Index}]: ##{m.Value}##\n";
-
+            }
+            for (int i = 0; i < m.Groups.Count; i++)
+            {
+                richTextBox2.Text += String.Format("Groups[{0}]={1}\n", i, m.Groups[i]);
             }
         }
 
@@ -79,6 +91,19 @@ namespace _5_lab_3_sem
         {
             Settings.Default.DefaultFileName = data.FileName;
             Settings.Default.Save();
+        }
+
+        private void orOfClickToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int ofc, orc;
+            data.GetOfOrStatistics(out ofc, out orc);
+            richTextBox2.Text = $" of: {ofc}, or: {orc}";
+        }
+
+        private void findFirstWordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ISet<String> words = data.FindSentencesFirstWords();
+            richTextBox2.Text = String.Join(", ", words);
         }
     }
 }

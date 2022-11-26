@@ -23,6 +23,20 @@ namespace _5_lab_3_sem
             }
         }
 
+        internal void GetOfOrStatistics(out int ofc, out int orc)
+        {
+            ofc = 0; orc = 0;
+            foreach (Match m in Regex.Matches(this.Text, @"\b(of|or)\b"))
+            {
+                if (m.ToString() == "of") {
+                    ofc++;
+                } else
+                {
+                    orc++;
+                }
+            }
+        }
+
         internal void Next()
         {
             Match = Match?.NextMatch();
@@ -40,5 +54,17 @@ namespace _5_lab_3_sem
             }
 
         }
+
+        public ISet<string> FindSentencesFirstWords()
+        {
+            ISet<string> words = new HashSet<string>();
+            foreach (Match m in Regex.Matches(this.Text, @"([A-Z]\w+).*\?"))
+            {
+                words.Add(m.Groups[1].Value);
+            }
+            return words;
+        }
+
+
     }
 }

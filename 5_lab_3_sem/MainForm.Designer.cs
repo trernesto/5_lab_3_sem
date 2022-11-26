@@ -38,6 +38,8 @@
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.открытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.поискToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.orOfClickToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.findFirstWordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -124,9 +126,26 @@
             // 
             // поискToolStripMenuItem
             // 
+            this.поискToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.orOfClickToolStripMenuItem,
+            this.findFirstWordToolStripMenuItem});
             this.поискToolStripMenuItem.Name = "поискToolStripMenuItem";
             this.поискToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.поискToolStripMenuItem.Text = "Поиск";
+            // 
+            // orOfClickToolStripMenuItem
+            // 
+            this.orOfClickToolStripMenuItem.Name = "orOfClickToolStripMenuItem";
+            this.orOfClickToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.orOfClickToolStripMenuItem.Text = "OrOfClick";
+            this.orOfClickToolStripMenuItem.Click += new System.EventHandler(this.orOfClickToolStripMenuItem_Click);
+            // 
+            // findFirstWordToolStripMenuItem
+            // 
+            this.findFirstWordToolStripMenuItem.Name = "findFirstWordToolStripMenuItem";
+            this.findFirstWordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.findFirstWordToolStripMenuItem.Text = "FindFirstWord";
+            this.findFirstWordToolStripMenuItem.Click += new System.EventHandler(this.findFirstWordToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -163,5 +182,7 @@
         private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem открытьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem поискToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem orOfClickToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem findFirstWordToolStripMenuItem;
     }
 }
