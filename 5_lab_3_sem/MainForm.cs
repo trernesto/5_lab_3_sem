@@ -110,5 +110,13 @@ namespace _5_lab_3_sem
         {
             new StatisticsForm(data.FirstLetterCounts()).Show();
         }
+
+        private void колвоПредлИСреднееToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ISet<String> words = data.FindSentences();
+            richTextBox2.Text  = "Average: " + words.ElementAt(0) + '\n';
+            richTextBox2.Text += "Max sentence: " + words.ElementAt(1) + '\n';
+            richTextBox2.Text += "Words in max sentence: " + words.ElementAt(2);
+        }
     }
 }

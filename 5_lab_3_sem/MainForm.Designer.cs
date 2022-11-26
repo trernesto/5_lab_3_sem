@@ -42,6 +42,8 @@
             this.findFirstWordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.статистикаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.первыеБуквыСловToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.колвоПредложенийИСреднееToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.колвоПредлИСреднееToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -131,7 +133,8 @@
             // 
             this.поискToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.orOfClickToolStripMenuItem,
-            this.findFirstWordToolStripMenuItem});
+            this.findFirstWordToolStripMenuItem,
+            this.колвоПредлИСреднееToolStripMenuItem});
             this.поискToolStripMenuItem.Name = "поискToolStripMenuItem";
             this.поискToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.поискToolStripMenuItem.Text = "Поиск";
@@ -139,21 +142,22 @@
             // orOfClickToolStripMenuItem
             // 
             this.orOfClickToolStripMenuItem.Name = "orOfClickToolStripMenuItem";
-            this.orOfClickToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.orOfClickToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.orOfClickToolStripMenuItem.Text = "OrOfClick";
             this.orOfClickToolStripMenuItem.Click += new System.EventHandler(this.orOfClickToolStripMenuItem_Click);
             // 
             // findFirstWordToolStripMenuItem
             // 
             this.findFirstWordToolStripMenuItem.Name = "findFirstWordToolStripMenuItem";
-            this.findFirstWordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.findFirstWordToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.findFirstWordToolStripMenuItem.Text = "FindFirstWord";
             this.findFirstWordToolStripMenuItem.Click += new System.EventHandler(this.findFirstWordToolStripMenuItem_Click);
             // 
             // статистикаToolStripMenuItem
             // 
             this.статистикаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.первыеБуквыСловToolStripMenuItem});
+            this.первыеБуквыСловToolStripMenuItem,
+            this.колвоПредложенийИСреднееToolStripMenuItem});
             this.статистикаToolStripMenuItem.Name = "статистикаToolStripMenuItem";
             this.статистикаToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
             this.статистикаToolStripMenuItem.Text = "Статистика";
@@ -161,9 +165,22 @@
             // первыеБуквыСловToolStripMenuItem
             // 
             this.первыеБуквыСловToolStripMenuItem.Name = "первыеБуквыСловToolStripMenuItem";
-            this.первыеБуквыСловToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.первыеБуквыСловToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
             this.первыеБуквыСловToolStripMenuItem.Text = "Первые буквы слов";
             this.первыеБуквыСловToolStripMenuItem.Click += new System.EventHandler(this.первыеБуквыСловToolStripMenuItem_Click);
+            // 
+            // колвоПредложенийИСреднееToolStripMenuItem
+            // 
+            this.колвоПредложенийИСреднееToolStripMenuItem.Name = "колвоПредложенийИСреднееToolStripMenuItem";
+            this.колвоПредложенийИСреднееToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
+            this.колвоПредложенийИСреднееToolStripMenuItem.Text = "Кол-во предложений и среднее";
+            // 
+            // колвоПредлИСреднееToolStripMenuItem
+            // 
+            this.колвоПредлИСреднееToolStripMenuItem.Name = "колвоПредлИСреднееToolStripMenuItem";
+            this.колвоПредлИСреднееToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.колвоПредлИСреднееToolStripMenuItem.Text = "Кол-во Предл и среднее";
+            this.колвоПредлИСреднееToolStripMenuItem.Click += new System.EventHandler(this.колвоПредлИСреднееToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -204,5 +221,7 @@
         private System.Windows.Forms.ToolStripMenuItem findFirstWordToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem статистикаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem первыеБуквыСловToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem колвоПредложенийИСреднееToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem колвоПредлИСреднееToolStripMenuItem;
     }
 }

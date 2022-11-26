@@ -67,6 +67,37 @@ namespace _5_lab_3_sem
             return words;
         }
 
+        public ISet<string> FindSentences()
+        {
+            int max = 0;
+            int averageCounter = 0;
+            int average = 0;
+            String maxSentence = "";
+            ISet<string> toOutput = new HashSet<string>();
+            ISet<string> sentences = new HashSet<string>();
+            foreach (Match m in Regex.Matches(this.Text,
+                @"( ?[A-Z]\w+,?)\s(\b\w+ |\(\w+ |\w+\, |\w+\) |\w+\'\w+ |\w+\-\w+ )*\w+[\?\.\!]"))
+            {
+                ++averageCounter;
+                int numberOfWords = 0;
+                foreach(Match word in Regex.Matches(m.ToString(), @"\w+"))
+                {
+                    ++numberOfWords;
+                }
+                if (numberOfWords > max)
+                {
+                    maxSentence = m.ToString();
+                    max = numberOfWords;
+                }
+                average += numberOfWords;
+                sentences.Add(m.ToString());
+            }
+            toOutput.Add((average / averageCounter).ToString());
+            toOutput.Add(maxSentence);
+            toOutput.Add(max.ToString());
+            return toOutput;
+        }
+
         public IDictionary<string, int> FirstLetterCounts()
         {
             SortedDictionary<string, int> counts = new SortedDictionary<string, int>();
