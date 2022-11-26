@@ -17,7 +17,10 @@ namespace _5_lab_3_sem
 
         internal void Find(string text)
         {
-            this.Match = Regex.Match(this.Text, text); //text - regex
+            if (this.Text != null)
+            {
+                this.Match = Regex.Match(this.Text, text); //text - regex
+            }
         }
 
         internal void Next()
@@ -27,9 +30,13 @@ namespace _5_lab_3_sem
 
         internal void ReadFromFile(string fileName)
         {
-            using (StreamReader sr = new StreamReader(fileName))
+            FileName = fileName;
+            if (fileName != "") 
             {
-                Text = sr.ReadToEnd().Replace("\r", "");
+                using (StreamReader sr = new StreamReader(fileName))
+                {
+                    Text = sr.ReadToEnd().Replace("\r", "");
+                }
             }
 
         }

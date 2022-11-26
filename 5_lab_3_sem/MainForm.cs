@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _5_lab_3_sem.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,8 @@ namespace _5_lab_3_sem
         public MainForm()
         {
             InitializeComponent();
+            data.ReadFromFile(Settings.Default.DefaultFileName);
+            richTextBox1.Text = data.Text;
         }
 
         private void OpenFile(object sender, EventArgs e)
@@ -70,6 +73,12 @@ namespace _5_lab_3_sem
         {
             data.Next();
             this.ShowMatch();
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Settings.Default.DefaultFileName = data.FileName;
+            Settings.Default.Save();
         }
     }
 }
