@@ -48,6 +48,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(628, 20);
             this.textBox1.TabIndex = 0;
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FindByEnter);
             // 
             // button1
             // 
@@ -67,6 +68,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "Ещё";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.NextMatch);
             // 
             // richTextBox1
             // 

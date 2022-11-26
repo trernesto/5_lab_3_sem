@@ -54,5 +54,22 @@ namespace _5_lab_3_sem
 
             }
         }
+
+        private void FindByEnter(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                data.Find(textBox1.Text);
+                this.ShowMatch();
+                e.SuppressKeyPress = true; // дальше событие нажатие кнопки игнорируется
+            }
+
+        }
+
+        private void NextMatch(object sender, EventArgs e)
+        {
+            data.Next();
+            this.ShowMatch();
+        }
     }
 }

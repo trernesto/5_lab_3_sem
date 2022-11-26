@@ -20,6 +20,11 @@ namespace _5_lab_3_sem
             this.Match = Regex.Match(this.Text, text); //text - regex
         }
 
+        internal void Next()
+        {
+            Match = Match?.NextMatch();
+        }
+
         internal void ReadFromFile(string fileName)
         {
             using (StreamReader sr = new StreamReader(fileName))
