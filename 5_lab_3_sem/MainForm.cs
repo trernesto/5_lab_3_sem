@@ -105,5 +105,10 @@ namespace _5_lab_3_sem
             ISet<String> words = data.FindSentencesFirstWords();
             richTextBox2.Text = String.Join(", ", words);
         }
+
+        private void статистикаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new StatisticsForm(data.FirstLetterCounts()).Show();
+        }
     }
 }

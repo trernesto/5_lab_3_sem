@@ -6,6 +6,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace _5_lab_3_sem
 {
@@ -65,6 +66,24 @@ namespace _5_lab_3_sem
             return words;
         }
 
+        public IDictionary<string, int> FirstLetterCounts()
+        {
+            SortedDictionary<string, int> counts = new SortedDictionary<string, int>();
+            Regex r = new Regex(@"\s([A-z])");
+            foreach (Match m in r.Matches(this.Text))
+            {
+                string b = m.Groups[1].Value.ToUpper();
+                if (counts.ContainsKey(b))
+                {
+                    counts[b]++;
+                }
+                else
+                {
+                    counts[b] = 1;
+                }
+            }
+            return counts;
+        }
 
     }
 }
